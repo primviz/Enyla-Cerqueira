@@ -1,4 +1,4 @@
-# Dra. Enyla Cerqueira • Site V1.2
+# Dra. Enyla Cerqueira • Site V1.4
 
 Site estático em HTML5, CSS e JavaScript puro. Sem compilação, frameworks ou banco de dados. Projeto entregue sem publicação.
 
@@ -47,7 +47,7 @@ Isso acrescenta canonical, og:url, URL absoluta da imagem Open Graph e gera site
 
 Identidade oficial preservada em preto, dourado e off-white. Foram utilizadas a foto da profissional e as 16 fotos clínicas enviadas, sem criação de imagens ou depoimentos. Os resultados são exibidos integralmente, em galeria com rolagem, controles e lightbox. Dois depoimentos em vídeo foram adicionados na V1.1, com controles nativos, reprodução inline no celular e sem autoplay. Arquivos H.264/AAC otimizados em 720 × 1280, mantendo duração e áudio. preload="none" evita carregar o vídeo inteiro antes da reprodução. Capas extraídas dos próprios vídeos. Ao reproduzir um depoimento, o outro é pausado. Não foram inventados nomes nem transcritos relatos.
 
-Textos dos procedimentos e previsão de resultados seguem a informação complementar fornecida pelo responsável. O site informa variação individual e avaliação personalizada. Crédito de autoria “Feito pro Primviz →” com link para https://primviz.com.br.
+Textos dos procedimentos e previsão de resultados seguem a informação complementar fornecida pelo responsável. O site informa variação individual e avaliação personalizada. Crédito de autoria “Feito por Primviz →” com link para https://primviz.com.br.
 
 Verificados sintaxe JavaScript, referências locais, integridade das imagens, campos, opções, links e fluxo de conversão por simulação. **Não houve verificação visual em navegador neste ambiente.** Conferir em dispositivos reais antes de publicar. Layout contém regras para 320px, celular, tablet e desktop e respeita prefers-reduced-motion.
 
@@ -56,3 +56,13 @@ Verificados sintaxe JavaScript, referências locais, integridade das imagens, ca
 Logo com fundo transparente, preservando o dourado oficial. Setas decorativas dos CTAs removidas. Setas funcionais da galeria e crédito Primviz mantidos. Textos sem travessões. Animações contínuas discretas (aros, luz ambiente, ponto dourado e linha da foto), com prefers-reduced-motion.
 
 Referências tipográficas: ITC New Baskerville e Coco Gothic. Os arquivos comerciais não foram fornecidos. O CSS prioriza esses nomes quando instalados; títulos usam Baskerville/Georgia como fallback, com espaçamentos ajustados. Textos usam URW Gothic incorporada como alternativa geométrica próxima. Licença em assets/fonts/LICENSE-URW.txt. Para garantir as fontes exatas em todos os dispositivos, fornecer seus arquivos web licenciados e configurar @font-face.
+
+## Ajustes V1.3
+
+Os quatro CTAs de tratamentos agora têm fundo dourado, contorno completo arredondado, texto maior e pulsação discreta, desativada em prefers-reduced-motion. Mantido o fluxo para pré-cadastro. Crédito corrigido para “Feito por Primviz”.
+
+Em telas até 540px, apresentação inicial, títulos, introduções, cards dos tratamentos, depoimentos, localização e rodapé foram centralizados. Labels, campos do formulário, perguntas frequentes e etapas mantêm alinhamento de leitura. Desktop preservado.
+
+## Ajuste V1.4
+
+Rodapé centralizado até 800px: logo, texto, e-mail, cidade, Instagram, direitos autorais e crédito. Grade do rodapé ocupa toda a largura disponível, corrigindo o alinhamento residual à esquerda. Demais seções e recursos preservados.

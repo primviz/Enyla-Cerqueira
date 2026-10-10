@@ -15,3 +15,30 @@ h1,h2{letter-spacing:-.035em}h1 em,h2 em{font-style:normal}.eyebrow{letter-spaci
 @keyframes orbit-breathe{0%,100%{transform:scale(.96) rotate(-3deg);opacity:.5}50%{transform:scale(1.08) rotate(3deg);opacity:1}}@keyframes ambient-drift{0%,100%{transform:translate(0,0)}50%{transform:translate(-35px,-25px)}}@keyframes spark-glow{0%,100%{opacity:.5;box-shadow:0 0 6px #d4b77822}50%{opacity:1;box-shadow:0 0 18px #d4b77866}}@keyframes gold-line-breathe{0%,100%{width:35px;opacity:.7}50%{width:55px;opacity:1}}
 @media(max-width:540px){.ambient-orbit{width:310px;height:310px;left:-190px;top:60px}.animated-spark{display:none!important}.hero .button{justify-content:center}.quote-section:before{inset:20% -25%}}
 @media(prefers-reduced-motion:reduce){.ambient-orbit i,.hero-copy:after,.animated-spark,.quote-section:before,.photo-label:before{animation:none!important}}
+
+/* V1.3: destaque dos tratamentos e composição centralizada no celular. */
+.service .service-cta{margin-top:auto;padding:16px 24px;border-radius:999px;border:1px solid #af8a43;min-height:54px;font-size:.96rem;line-height:1.45;font-weight:600;color:#241c0f;background:linear-gradient(115deg,#dcc18a,#eedbad,#c7a565);box-shadow:0 0 0 0 #aa864300;animation:service-cta-pulse 4s ease-in-out infinite;max-width:100%;text-align:center;letter-spacing:.01em}
+.service .service-cta:hover,.service .service-cta:focus-visible{animation:none;background:linear-gradient(115deg,#ead5a8,#f3e3c3,#dbc08a);box-shadow:0 6px 20px #8a642d26;transform:translateY(-2px)}
+@keyframes service-cta-pulse{0%,100%{box-shadow:0 0 0 0 #af8a4300}50%{box-shadow:0 0 0 6px #af8a431a}}
+@media(max-width:540px){
+.hero-copy,.section-intro,.about-copy,.section-heading,.care>div,.faq>div:first-child,.location-grid>div:first-child,.contact>div:first-child,.testimonial-caption{text-align:center}
+.hero-desc,.about-copy p,.faq>div>p:not(.eyebrow),.contact>div>p:not(.eyebrow){margin-left:auto;margin-right:auto}
+.hero .actions{align-items:center}.hero-note{justify-content:center}.promise-strip{justify-content:center;text-align:center}.promise-strip i{display:none}.promise-strip span:not(.animated-spark){flex-basis:100%}
+.service,.service:nth-child(even){align-items:center;text-align:center;padding:34px 0}.service .eyebrow{padding-right:0}.service .number{position:static;display:block;margin-bottom:13px;font-size:.88rem}.service>p:not(.eyebrow){margin-left:auto;margin-right:auto}.service .service-cta{font-size:.94rem;width:100%;margin-top:8px;padding-inline:16px}.section-note{text-align:center}
+.gallery-intro{text-align:center}.gallery-controls{justify-content:center}.gallery-bottom{align-items:center;text-align:center}.testimonial-bottom{align-items:center;text-align:center}.map-actions{justify-content:center}.photo-label{left:20px;right:20px;text-align:center}.photo-label:before{margin-inline:auto}
+.footer-main{justify-items:center;text-align:center}.footer-main .logo{margin-inline:auto}.footer-main>div{min-width:0;max-width:100%;overflow-wrap:anywhere}.footer-main .text-link{justify-content:center}.footer-bottom{align-items:center;text-align:center;padding-right:0;padding-bottom:48px}.footer-bottom small{max-width:100%;line-height:1.8}
+/* Labels, campos e perguntas mantêm alinhamento de leitura. */
+.contact-form,.faq-list,.steps{text-align:left}
+}
+@media(prefers-reduced-motion:reduce){.service .service-cta{animation:none!important}}
+
+/* V1.4: o rodapé ocupa toda a largura e centraliza seus blocos no mobile. */
+@media(max-width:800px){
+footer .footer-main{display:grid;grid-template-columns:minmax(0,1fr);justify-content:center;justify-items:center;align-items:center;text-align:center;gap:26px}
+footer .footer-main>a:first-child{display:flex;justify-content:center;width:100%}
+footer .footer-main .logo{margin-inline:auto}
+footer .footer-main>div{width:100%;min-width:0;max-width:100%;text-align:center;overflow-wrap:anywhere}
+footer .footer-main .text-link{justify-self:center;justify-content:center}
+footer .footer-bottom{display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding-right:0;padding-bottom:48px;gap:10px}
+footer .footer-bottom small,footer .primviz-credit{display:block;max-width:100%;text-align:center}
+}
