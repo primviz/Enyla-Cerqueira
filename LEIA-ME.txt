@@ -19,3 +19,5 @@ O endereço publicado não foi alterado automaticamente. Faça backup da pasta a
 O autoplay depende das permissões do navegador. Modo de economia de energia/dados pode exigir um toque para reproduzir; os controles permanecem disponíveis. O som só inicia com interação do visitante.
 
 Preservados: galeria de 16 resultados, formulário com WhatsApp, links, navegação e GA4 existente (G-CY05NCCE73).
+
+Correção V2.0: capas extraídas do primeiro frame real (tempo 0), preservando a imagem introdutória de 0,5 segundo. Nomes novos das capas evitam cache da imagem anterior.
