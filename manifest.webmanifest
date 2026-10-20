@@ -1,16 +1,1 @@
-{
-  "name": "Dra. Enyla Cerqueira",
-  "short_name": "Dra. Enyla",
-  "lang": "pt-BR",
-  "start_url": "./",
-  "display": "browser",
-  "background_color": "#11110f",
-  "theme_color": "#11110f",
-  "icons": [
-    {
-      "src": "assets/images/monogram.webp",
-      "sizes": "256x256",
-      "type": "image/webp"
-    }
-  ]
-}
+{"name":"Dra. Enyla Cerqueira","short_name":"Dra. Enyla","start_url":"./","display":"browser","background_color":"#f8f3eb","theme_color":"#f8f3eb"}

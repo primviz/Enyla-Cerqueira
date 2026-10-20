@@ -1,0 +1,21 @@
+DRA. ENYLA CERQUEIRA — V2.0
+
+Site recuperado do endereço publicado em 20/10/2026.
+
+Alterações:
+- Paleta clara em bege, marfim e dourado suave.
+- Três vídeos novos, na ordem dos arquivos enviados.
+- Vídeos completos em 720x1280, com áudio, otimizados para web.
+- Início automático sem som quando o vídeo fica visível; pausa fora da tela.
+- Botão Ativar som e controles nativos disponíveis.
+- Carregamento dos vídeos próximo da tela, para reduzir consumo inicial.
+- Layout mobile com os três vídeos em sequência vertical.
+
+PUBLICAÇÃO
+Extraia o ZIP e envie index.html, assets, favicon.ico e manifest.webmanifest para a pasta pública do domínio, substituindo os arquivos correspondentes. O index.html deve ficar na raiz.
+
+O endereço publicado não foi alterado automaticamente. Faça backup da pasta atual antes de substituir.
+
+O autoplay depende das permissões do navegador. Modo de economia de energia/dados pode exigir um toque para reproduzir; os controles permanecem disponíveis. O som só inicia com interação do visitante.
+
+Preservados: galeria de 16 resultados, formulário com WhatsApp, links, navegação e GA4 existente (G-CY05NCCE73).

@@ -38,6 +38,34 @@ const retry=document.createElement('a');retry.href=url;retry.target='_blank';ret
 });
 ['nome','cidade'].forEach(id=>document.getElementById(id).addEventListener('input',e=>e.target.setCustomValidity('')));
 
-// Evita que os depoimentos reproduzam áudio simultaneamente.
+// V2.0: carrega perto da tela; reproduz apenas o vídeo mais visível.
 const testimonialVideos=Array.from(document.querySelectorAll('.testimonial-video video'));
-testimonialVideos.forEach(video=>video.addEventListener('play',()=>{testimonialVideos.forEach(other=>{if(other!==video)other.pause();});}));
+const visibility=new Map();
+let autoVideo=null;
+let manualPause=new WeakSet();
+let managedPause=new WeakSet();
+function stopVideo(video){if(!video.paused){managedPause.add(video);video.pause();}}
+function loadVideo(video){const source=video.querySelector('source[data-src]');if(source){source.src=source.dataset.src;delete source.dataset.src;video.load();}}
+function updatePlayback(){
+ const visible=testimonialVideos.filter(v=>(visibility.get(v)||0)>=.4);
+ const next=document.hidden?null:visible.sort((a,b)=>(visibility.get(b)||0)-(visibility.get(a)||0))[0]||null;
+ testimonialVideos.forEach(v=>{if(v!==next)stopVideo(v);});
+ if(autoVideo && autoVideo!==next){autoVideo.muted=true;} autoVideo=next;
+ if(next && !manualPause.has(next)){loadVideo(next);next.play().catch(()=>{});}
+}
+testimonialVideos.forEach((video,index)=>{
+ video.muted=true;video.defaultMuted=true;
+ const sound=video.parentElement.querySelector('.video-sound');
+ function labelSound(){sound.textContent=video.muted?'Ativar som':'Silenciar';sound.setAttribute('aria-pressed',String(!video.muted));sound.setAttribute('aria-label',(video.muted?'Ativar som':'Silenciar')+' do depoimento '+(index+1));}
+ sound.addEventListener('click',()=>{video.muted=!video.muted;if(!video.muted){testimonialVideos.forEach(v=>{if(v!==video){v.muted=true;stopVideo(v);}});}manualPause.delete(video);loadVideo(video);video.play().catch(()=>{});labelSound();});
+ video.addEventListener('volumechange',labelSound);
+ video.addEventListener('play',()=>{manualPause.delete(video);testimonialVideos.forEach(v=>{if(v!==video)stopVideo(v);});});
+ video.addEventListener('pause',()=>{if(managedPause.has(video)){managedPause.delete(video);}else if((visibility.get(video)||0)>=.4&&!document.hidden){manualPause.add(video);}});
+ video.addEventListener('ended',()=>manualPause.add(video));
+});
+if('IntersectionObserver' in window){
+ const loader=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){loadVideo(e.target);loader.unobserve(e.target);}}),{rootMargin:'250px 0px'});
+ const player=new IntersectionObserver(entries=>{entries.forEach(e=>{visibility.set(e.target,e.intersectionRatio);if(!e.isIntersecting){manualPause.delete(e.target);e.target.muted=true;}});updatePlayback();},{threshold:[0,.1,.25,.4,.5,.6,.75,1]});
+ testimonialVideos.forEach(v=>{loader.observe(v);player.observe(v);});
+}else{testimonialVideos.forEach(loadVideo);}
+document.addEventListener('visibilitychange',updatePlayback);
